@@ -1,0 +1,532 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color from parent */
+    cursor: pointer; /* Change cursor to pointer */
+  }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+
+
+//================= COLORS ===================//
+
+$clr-red:#FC4747;
+$clr-dBlue:#10141E;
+$clr-gBlue:#5A698F;
+$clr-sdBlue:#161D2F;
+$clr-white:#FFFFFF;
+
+
+
+//================== FONTS ==================//
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px $clr-sdBlue inset !important;
+}
+input:-webkit-autofill{
+    -webkit-text-fill-color: $clr-white !important;
+}
+
+html{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.hd{
+    &-lg{
+        font-size: 32px;
+        font-weight: 300;
+    }
+    &-md{
+        font-size: 24px;
+        font-weight: 300;
+    }
+    &-sm{
+        font-size: 24px;
+        font-weight: 500;
+    }
+    &-xs{
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+.bd{
+    &-md{
+        font-size: 15px;
+        font-weight: 300;
+    }
+    &-sm{
+        font-size: 13px;
+        font-weight: 300;
+    }
+}
+
+body{
+    background-color: $clr-dBlue;
+    color: $clr-white;
+}
+
+.container{
+    padding-inline: 1rem;
+    margin: 0 auto;
+}
+
+.header{
+    
+    padding-block: 1rem;
+    background-color: $clr-sdBlue;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav{
+        display: flex;
+        gap: 5vw;
+    }
+
+    a{
+        &:hover svg{
+
+            path{
+                fill: $clr-red;
+            }
+
+            circle{
+                fill: $clr-red;
+            }
+        }
+
+    }
+}
+
+
+
+.search-box{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+
+    form{
+        width: 100%;
+
+        input{
+            width: 100%;
+            background: none;
+            border: none;
+            color: $clr-white;
+            
+            
+            @media screen and (max-width:767px) {
+                font-size: 1rem;
+            }
+
+            &:focus{
+                outline: none;
+                border-bottom: $clr-gBlue solid 1px;
+                caret-color: $clr-red;
+            }
+        }
+    }
+    
+}
+
+
+.feature{
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width:767px) {
+        font-size: 1.25rem;
+        font-weight: 200;
+    }
+    
+}
+
+.recommended, .movies, .series, .bookmarked, .results{
+    .basic__display{
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(163px, 1fr)); /* Adjust min and max width as needed */
+        
+        @media screen and (max-width:374px) {
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        }
+        @media screen and (min-width:768px) {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+        @media screen and (min-width:1440px) {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .recommended__movie{
+            position: relative;
+            
+
+            &:hover{
+                cursor: pointer;
+                
+            }
+
+            .image-box{
+                overflow: hidden;
+                border-radius: 7px;
+                position: relative;
+                display: flex;
+                aspect-ratio: 8/5;
+
+                img{
+                    align-self: center;
+                }
+
+                
+
+                &:hover{
+                    .hover{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                
+            }
+            .descr{
+                color: rgba($clr-white, 0.75);
+                display: flex;
+                margin-block: .3rem;
+                align-items: center;
+                gap: .3rem;
+                
+                @media screen and (max-width:767px) {
+                    font-size: 11px;
+                }
+
+                p{
+                    margin: 0;
+                }
+
+            }
+
+            .title{
+                text-wrap: wrap;
+                @media screen and (max-width:767px) {
+                    font-size: 14px;
+                }
+            }
+        }        
+    }
+    
+}
+
+.bookmarked, .results{
+    .basic__display{
+        grid-template-columns: repeat(auto-fit, 164px);
+
+
+        @media screen and (max-width:376px) {
+            grid-template-columns: repeat(auto-fit, 130px);
+        }
+        @media screen and (min-width:768px) {
+            grid-template-columns: repeat(auto-fit, 220px);
+        }
+        @media screen and (min-width:1440px) {
+            grid-template-columns: repeat(auto-fit, 280px);
+        }
+    }
+
+    .empty{
+        margin-block: 1.5rem;
+    }
+}
+
+.trending.container{
+    padding-right: 0;
+}
+
+
+.trending{
+    
+    &__slider{
+        display: flex;
+        gap: 1rem;
+        overflow: hidden;
+    }
+    
+    &__movie{
+        overflow: hidden;
+        border-radius: 7px;
+        position: relative;
+        display: flex;
+        aspect-ratio: 2.04/1;
+        
+        margin-right: 1rem;
+        // min-width: 240px;
+        // min-height: 140px;
+        // max-width: 470px;
+        
+        &:hover{
+            cursor: pointer;
+        }
+
+
+        // @media screen and (min-width:767px) {
+        //     min-width: 350px;
+        // }
+        // @media screen and (min-width:1440px) {
+        //     min-width: 470px;
+        // }
+
+
+
+
+        img{
+            align-self: center;
+        }
+
+
+        .descr{
+            color: rgba($clr-white, 0.75);
+            display: flex;
+            margin-block: .3rem;
+            align-items: center;
+            gap: .3rem;
+            position: absolute;
+            bottom: 2rem;
+            left: 1rem;
+            
+            @media screen and (max-width:767px) {
+                font-size: 11px;
+            }
+
+            p{
+                margin: 0;
+            }
+
+        }
+
+        .title{
+            position: absolute;
+            text-wrap: wrap;
+            bottom: .8rem;
+            left: 1rem;
+
+            @media screen and (max-width:767px) {
+                font-size: 14px;
+            }
+        }
+
+        &:hover{
+            .hover{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+    }
+}
+
+.hover{
+    position: absolute;
+    background-color: rgba(black, 0.5);
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    .play{
+        background-color: rgba($clr-white, 0.25);
+        border-radius: 30px;
+        padding-block: .5rem;
+        padding-left: .4rem;
+        padding-right: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+    }
+}
+
+.bookmark{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: .6rem .65rem;
+    background-color: rgba($clr-dBlue, 0.5);
+    border-radius: 50%;
+    z-index: 100;
+
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.03);
+        background-color: rgba($clr-dBlue, 0.75);
+    }
+}
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    gap: 4rem;
+
+    .login-form{
+        background-color: $clr-sdBlue;
+        border-radius: 6px;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        width: 52vw;
+        min-width: 327px;
+        max-width: 400px;
+
+        h2{
+            margin-bottom: 1.5rem;
+        }
+
+        input{
+            width: 100%;
+            background: none;
+            border: none;
+            color: $clr-white;
+            border-bottom: $clr-gBlue solid 1px;
+            padding-bottom: 1.2rem;
+            padding-top: .7rem;
+            padding-inline: .7rem;
+
+            
+            
+            @media screen and (max-width:767px) {
+                font-size: 1rem;
+            }
+
+            &:focus{
+                outline: none;
+                border-bottom: $clr-gBlue solid 1px;
+                caret-color: $clr-red;
+            }
+        }
+
+        button{
+            margin-top: 1rem;
+            background-color: $clr-red;
+            border: none;
+            color: $clr-white;
+            padding: 1rem;
+            border-radius: 6px;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .sign-choice{
+        display: flex;
+        gap: .5rem;
+        align-self: center;
+
+        button.sign{
+            padding: 0;
+            background-color: transparent;
+            color: $clr-red;
+            
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+}

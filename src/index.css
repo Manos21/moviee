@@ -1,0 +1,445 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #161D2F inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+html {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.hd-lg {
+  font-size: 32px;
+  font-weight: 300;
+}
+.hd-md {
+  font-size: 24px;
+  font-weight: 300;
+}
+.hd-sm {
+  font-size: 24px;
+  font-weight: 500;
+}
+.hd-xs {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.bd-md {
+  font-size: 15px;
+  font-weight: 300;
+}
+.bd-sm {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+body {
+  background-color: #10141E;
+  color: #FFFFFF;
+}
+
+.container {
+  padding-inline: 1rem;
+  margin: 0 auto;
+}
+
+.header {
+  padding-block: 1rem;
+  background-color: #161D2F;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+}
+.header nav {
+  display: flex;
+  gap: 5vw;
+}
+.header a:hover svg path {
+  fill: #FC4747;
+}
+.header a:hover svg circle {
+  fill: #FC4747;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.search-box form {
+  width: 100%;
+}
+.search-box form input {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 767px) {
+  .search-box form input {
+    font-size: 1rem;
+  }
+}
+.search-box form input:focus {
+  outline: none;
+  border-bottom: #5A698F solid 1px;
+  caret-color: #FC4747;
+}
+
+.feature {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .feature {
+    font-size: 1.25rem;
+    font-weight: 200;
+  }
+}
+
+.recommended .basic__display, .movies .basic__display, .series .basic__display, .bookmarked .basic__display, .results .basic__display {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(163px, 1fr)); /* Adjust min and max width as needed */
+}
+@media screen and (max-width: 374px) {
+  .recommended .basic__display, .movies .basic__display, .series .basic__display, .bookmarked .basic__display, .results .basic__display {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+@media screen and (min-width: 768px) {
+  .recommended .basic__display, .movies .basic__display, .series .basic__display, .bookmarked .basic__display, .results .basic__display {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+@media screen and (min-width: 1440px) {
+  .recommended .basic__display, .movies .basic__display, .series .basic__display, .bookmarked .basic__display, .results .basic__display {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+.recommended .basic__display .recommended__movie, .movies .basic__display .recommended__movie, .series .basic__display .recommended__movie, .bookmarked .basic__display .recommended__movie, .results .basic__display .recommended__movie {
+  position: relative;
+}
+.recommended .basic__display .recommended__movie:hover, .movies .basic__display .recommended__movie:hover, .series .basic__display .recommended__movie:hover, .bookmarked .basic__display .recommended__movie:hover, .results .basic__display .recommended__movie:hover {
+  cursor: pointer;
+}
+.recommended .basic__display .recommended__movie .image-box, .movies .basic__display .recommended__movie .image-box, .series .basic__display .recommended__movie .image-box, .bookmarked .basic__display .recommended__movie .image-box, .results .basic__display .recommended__movie .image-box {
+  overflow: hidden;
+  border-radius: 7px;
+  position: relative;
+  display: flex;
+  aspect-ratio: 8/5;
+}
+.recommended .basic__display .recommended__movie .image-box img, .movies .basic__display .recommended__movie .image-box img, .series .basic__display .recommended__movie .image-box img, .bookmarked .basic__display .recommended__movie .image-box img, .results .basic__display .recommended__movie .image-box img {
+  align-self: center;
+}
+.recommended .basic__display .recommended__movie .image-box:hover .hover, .movies .basic__display .recommended__movie .image-box:hover .hover, .series .basic__display .recommended__movie .image-box:hover .hover, .bookmarked .basic__display .recommended__movie .image-box:hover .hover, .results .basic__display .recommended__movie .image-box:hover .hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recommended .basic__display .recommended__movie .descr, .movies .basic__display .recommended__movie .descr, .series .basic__display .recommended__movie .descr, .bookmarked .basic__display .recommended__movie .descr, .results .basic__display .recommended__movie .descr {
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  margin-block: 0.3rem;
+  align-items: center;
+  gap: 0.3rem;
+}
+@media screen and (max-width: 767px) {
+  .recommended .basic__display .recommended__movie .descr, .movies .basic__display .recommended__movie .descr, .series .basic__display .recommended__movie .descr, .bookmarked .basic__display .recommended__movie .descr, .results .basic__display .recommended__movie .descr {
+    font-size: 11px;
+  }
+}
+.recommended .basic__display .recommended__movie .descr p, .movies .basic__display .recommended__movie .descr p, .series .basic__display .recommended__movie .descr p, .bookmarked .basic__display .recommended__movie .descr p, .results .basic__display .recommended__movie .descr p {
+  margin: 0;
+}
+.recommended .basic__display .recommended__movie .title, .movies .basic__display .recommended__movie .title, .series .basic__display .recommended__movie .title, .bookmarked .basic__display .recommended__movie .title, .results .basic__display .recommended__movie .title {
+  text-wrap: wrap;
+}
+@media screen and (max-width: 767px) {
+  .recommended .basic__display .recommended__movie .title, .movies .basic__display .recommended__movie .title, .series .basic__display .recommended__movie .title, .bookmarked .basic__display .recommended__movie .title, .results .basic__display .recommended__movie .title {
+    font-size: 14px;
+  }
+}
+
+.bookmarked .basic__display, .results .basic__display {
+  grid-template-columns: repeat(auto-fit, 164px);
+}
+@media screen and (max-width: 376px) {
+  .bookmarked .basic__display, .results .basic__display {
+    grid-template-columns: repeat(auto-fit, 130px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .bookmarked .basic__display, .results .basic__display {
+    grid-template-columns: repeat(auto-fit, 220px);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .bookmarked .basic__display, .results .basic__display {
+    grid-template-columns: repeat(auto-fit, 280px);
+  }
+}
+.bookmarked .empty, .results .empty {
+  margin-block: 1.5rem;
+}
+
+.trending.container {
+  padding-right: 0;
+}
+
+.trending__slider {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+}
+.trending__movie {
+  overflow: hidden;
+  border-radius: 7px;
+  position: relative;
+  display: flex;
+  aspect-ratio: 2.04/1;
+  margin-right: 1rem;
+}
+.trending__movie:hover {
+  cursor: pointer;
+}
+.trending__movie img {
+  align-self: center;
+}
+.trending__movie .descr {
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  margin-block: 0.3rem;
+  align-items: center;
+  gap: 0.3rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .trending__movie .descr {
+    font-size: 11px;
+  }
+}
+.trending__movie .descr p {
+  margin: 0;
+}
+.trending__movie .title {
+  position: absolute;
+  text-wrap: wrap;
+  bottom: 0.8rem;
+  left: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .trending__movie .title {
+    font-size: 14px;
+  }
+}
+.trending__movie:hover .hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hover {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.hover .play {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  padding-block: 0.5rem;
+  padding-left: 0.4rem;
+  padding-right: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookmark {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0.6rem 0.65rem;
+  background-color: rgba(16, 20, 30, 0.5);
+  border-radius: 50%;
+  z-index: 100;
+}
+.bookmark:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  background-color: rgba(16, 20, 30, 0.75);
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  gap: 4rem;
+}
+.login-container .login-form {
+  background-color: #161D2F;
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 52vw;
+  min-width: 327px;
+  max-width: 400px;
+}
+.login-container .login-form h2 {
+  margin-bottom: 1.5rem;
+}
+.login-container .login-form input {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  border-bottom: #5A698F solid 1px;
+  padding-bottom: 1.2rem;
+  padding-top: 0.7rem;
+  padding-inline: 0.7rem;
+}
+@media screen and (max-width: 767px) {
+  .login-container .login-form input {
+    font-size: 1rem;
+  }
+}
+.login-container .login-form input:focus {
+  outline: none;
+  border-bottom: #5A698F solid 1px;
+  caret-color: #FC4747;
+}
+.login-container .login-form button {
+  margin-top: 1rem;
+  background-color: #FC4747;
+  border: none;
+  color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 6px;
+}
+.login-container .login-form button:hover {
+  cursor: pointer;
+}
+.login-container .sign-choice {
+  display: flex;
+  gap: 0.5rem;
+  align-self: center;
+}
+.login-container .sign-choice button.sign {
+  padding: 0;
+  background-color: transparent;
+  color: #FC4747;
+}
+.login-container .sign-choice button.sign:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */
