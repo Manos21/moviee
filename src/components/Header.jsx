@@ -12,7 +12,7 @@ export default function Header(){
                     to="./"
                     onClick={()=>setSearch('')}    
                 >
-                    <img src="src\assets\logo.svg" alt="home" />
+                    <img src="src/assets/logo.svg" alt="home" />
                 </Link>
                 <nav>
                     <NavLink 

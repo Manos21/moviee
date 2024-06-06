@@ -40,7 +40,7 @@ export default function SearchBox(){
     
     return(
         <div className="search-box container">
-            <img src="src\assets\icon-search.svg" alt="search" />
+            <img src="src/assets/icon-search.svg" alt="search" />
             <form onSubmit={handleSubmit} >
                 <input 
                     className="hd-md"
