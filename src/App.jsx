@@ -19,7 +19,6 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <AppContext.Provider value={{all,setAll,search,setSearch}}>
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home/>} />
@@ -29,7 +28,6 @@ export default function App() {
           </Route>
           <Route path="login" element={<Login/>} />
         </Routes>
-      </AppContext.Provider>
     </BrowserRouter> 
   )
 }
