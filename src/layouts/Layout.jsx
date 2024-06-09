@@ -12,7 +12,8 @@ export default function Layout(){
         <div>
             <Header/>
             <SearchBox/>
-            <Outlet/>
+            {/* <Outlet/> */}
+            <Home/>
         </div>
     )
 }
