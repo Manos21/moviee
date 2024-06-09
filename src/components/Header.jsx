@@ -5,8 +5,6 @@ import { AppContext } from "../App";
 export default function Header(){
     const {setSearch,all} = React.useContext(AppContext)
 
-    console.log(all)
-
     return (
         <header className="header">
             <div className="container">
