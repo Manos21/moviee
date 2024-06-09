@@ -42,7 +42,7 @@ export default function SearchBox(){
     return(
         <div className="search-box container">
             {/*<img src="src/assets/icon-search.svg" alt="search" />*/}
-            <img src={'../assets/icon-search.svg'} alt="Search Icon" />
+            <img src={'..\assets\icon-search.svg'} alt="Search Icon" />
             <form onSubmit={handleSubmit}>
                 <input 
                     id="search-input"
