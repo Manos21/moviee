@@ -15,8 +15,12 @@ export {AppContext}
 export default function App() {
   const [all,setAll] = React.useState(data)
   const [search, setSearch] = React.useState('')
-  console.log(all)
-  console.log(Home)
+
+  useEffect(() => {
+    console.log('App component mounted');
+    console.log('Data:', all);
+    console.log('Home component:', Home);
+  }, [all]);
 
   return (
     <BrowserRouter>
