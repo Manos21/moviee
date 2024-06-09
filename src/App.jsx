@@ -16,6 +16,7 @@ export default function App() {
   const [all,setAll] = React.useState(data)
   const [search, setSearch] = React.useState('')
   console.log(all)
+  console.log(Home)
 
   return (
     <BrowserRouter>
