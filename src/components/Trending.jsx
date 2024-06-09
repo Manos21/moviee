@@ -33,6 +33,7 @@ export default function Trending({category,isBookmarked,isTrending,rating,thumbn
     }, []); // Empty dependency array to run effect only once on component mount
 
 
+    console.log("Trending mounted")
     return(
         <div className="trending__movie">
             <img src={size === "large"?thumbnail.trending.large:thumbnail.trending.small} alt="trending" />

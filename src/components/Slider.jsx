@@ -55,6 +55,7 @@ export default function Slider({children}){
         }
     };
 
+    console.log("Slider mounted")
     return(
             <Carousel
                 responsive={responsive}

@@ -42,6 +42,8 @@ export default function MovieSeries({category,isBookmarked,isTrending,rating,thu
     ? thumbnail.regular.medium
     : thumbnail.regular.large
 
+
+    console.log("Movie mounted")
     return(
         <div className="recommended__movie">
             <div className="image-box">
