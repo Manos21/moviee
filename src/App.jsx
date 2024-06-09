@@ -20,17 +20,17 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <AppContext.Provider value={{all,setAll,search,setSearch}}>
+      {/* <AppContext.Provider value={{all,setAll,search,setSearch}}> */}
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home/>} />
-            <Route path="movies" element={<Movies/>} />
+            {/* <Route path="movies" element={<Movies/>} />
             <Route path="series" element={<Series/>} />
-            <Route path="bookmarked" element={<Bookmarked/>} />
+            <Route path="bookmarked" element={<Bookmarked/>} /> */}
           </Route>
           <Route path="login" element={<Login/>} />
         </Routes>
-      </AppContext.Provider>
+      {/* </AppContext.Provider> */}
     </BrowserRouter> 
   )
 }
