@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import Header from "../components/Header";
 import SearchBox from "../components/SearchBox";
 
+
 export default function Layout(){
 
     return(

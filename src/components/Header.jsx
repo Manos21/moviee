@@ -3,7 +3,9 @@ import { Link, NavLink } from "react-router-dom"
 import { AppContext } from "../App";
 
 export default function Header(){
-    const {setSearch} = React.useContext(AppContext)
+    const {setSearch,all} = React.useContext(AppContext)
+
+    console.log(all)
 
     return (
         <header className="header">
