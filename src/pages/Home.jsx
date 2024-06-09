@@ -9,9 +9,9 @@ import Slider from "../components/Slider";
 
 export default function Home(){
 
-    const {all,search} = React.useContext(AppContext)
-    const [searchParams, setSearchParams] = useSearchParams()
-    console.log("Home mounted")
+    // const {all,search} = React.useContext(AppContext)
+    // const [searchParams, setSearchParams] = useSearchParams()
+    // console.log("Home mounted")
 
     return(
         // searchParams.size === 0?
