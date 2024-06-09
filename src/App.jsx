@@ -8,6 +8,7 @@ import Layout from './layouts/Layout';
 import Login from './pages/Login';
 import Bookmarked from './pages/Bookmarked';
 import data from './data/data.json'
+import Test from './components/Test';
 
 const AppContext = React.createContext()
 export {AppContext}
@@ -28,6 +29,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home/>} />
+            <Route path="test" element={<Test />} />
             <Route path="movies" element={<Movies/>} />
             <Route path="series" element={<Series/>} />
             <Route path="bookmarked" element={<Bookmarked/>} />
