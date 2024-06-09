@@ -2,6 +2,7 @@ import React from "react";
 import { AppContext } from "../App";
 import { useLocation } from "react-router-dom"
 import { useSearchParams } from "react-router-dom"
+import searchIcon from '../assets/icon-search.svg';
 
 export default function SearchBox(){
 
@@ -41,6 +42,7 @@ export default function SearchBox(){
     return(
         <div className="search-box container">
             {/*<img src="src/assets/icon-search.svg" alt="search" />*/}
+            <img src={searchIcon} alt="Search Icon" />
             <form onSubmit={handleSubmit}>
                 <input 
                     id="search-input"
