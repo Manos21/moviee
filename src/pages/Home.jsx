@@ -1,17 +1,17 @@
 import React from "react";
-import Trending from "../components/Trending";
-import MovieSeries from "../components/MovieSeries";
-import { AppContext } from "../App";
-import SearchResults from "../layouts/SearchResults";
-import { useSearchParams } from "react-router-dom"
-import Slider from "../components/Slider";
+// import Trending from "../components/Trending";
+// import MovieSeries from "../components/MovieSeries";
+// import { AppContext } from "../App";
+// import SearchResults from "../layouts/SearchResults";
+// import { useSearchParams } from "react-router-dom"
+// import Slider from "../components/Slider";
 
 
 export default function Home(){
 
-    const {all,search} = React.useContext(AppContext)
-    const [searchParams, setSearchParams] = useSearchParams()
-    console.log("Home mounted")
+    // const {all,search} = React.useContext(AppContext)
+    // const [searchParams, setSearchParams] = useSearchParams()
+    // console.log("Home mounted")
 
     return(
         // searchParams.size === 0?
