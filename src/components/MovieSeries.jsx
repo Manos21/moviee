@@ -49,7 +49,7 @@ export default function MovieSeries({category,isBookmarked,isTrending,rating,thu
             <div className="image-box">
                 <picture>
                     
-                {/* <img src={url} alt="show" /> */}
+                <img src={url} alt="show" />
                 </picture>
                 <span onClick={()=>update(index,setAll)} className="bookmark"><img src={isBookmarked?"src/assets/icon-bookmark-full.svg":"src/assets/icon-bookmark-empty.svg"} alt="" /></span>
                 <Hover/>

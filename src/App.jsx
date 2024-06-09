@@ -15,7 +15,7 @@ export {AppContext}
 export default function App() {
   const [all,setAll] = React.useState(data)
   const [search, setSearch] = React.useState('')
-  
+  console.log(all)
 
   return (
     <BrowserRouter>
