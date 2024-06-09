@@ -16,7 +16,7 @@ export default function App() {
   const [all,setAll] = React.useState(data)
   const [search, setSearch] = React.useState('')
 
-  useEffect(() => {
+  React.useEffect(() => {
     console.log('App component mounted');
     console.log('Data:', all);
     console.log('Home component:', Home);
